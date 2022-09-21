@@ -38,7 +38,7 @@
 
         </header>
     </div>
-    <div class="bgded overlay" style="background-image:url('{{ url('') }}/assets/images/pic1.jpg');">
+    <div class="bgded overlay" style="background-image:url('{{ url('') }}/assets/images/pic1.JPG');">
         <div id="pageintro" class="hoc clear">
 
             <div class="flexslider basicslider">
