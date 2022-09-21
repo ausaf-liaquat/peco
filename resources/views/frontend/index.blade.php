@@ -24,7 +24,7 @@
         <header id="header" class="hoc clear">
 
             <div class="fl_left">
-                <img src="{{ url('') }}/assets/images/logo1.jpg" alt="" width="75" style="width:75%;">
+                <img src="{{ url('') }}/assets/images/logo1.JPG" alt="" width="75" style="width:75%;">
             </div>
             <nav id="mainav" class="fl_right">
                 <ul class="clear">
@@ -115,12 +115,12 @@
 
             <div class="row">
                 <div class="col-md-4 "><img src="{{ url('') }}/assets/images/pic6.jpg" alt=""></div>
-                <div class="col-md-8 mb-2 ml-2"><img class="mb-2" src="{{ url('') }}/assets/images/pic3.jpg" alt=""><h5>Project Name</h5><p>Location | 550000 SF</p>
+                <div class="col-md-8 mb-2 ml-2"><img class="mb-2" src="{{ url('') }}/assets/images/pic3.JPG" alt=""><h5>Project Name</h5><p>Location | 550000 SF</p>
                 </div>
-                <div class="col-md-8 mt-2"><img src="{{ url('') }}/assets/images/pic3.jpg" alt=""><h5>Project Name</h5><p>Location | 550000 SF</p></div>
+                <div class="col-md-8 mt-2"><img src="{{ url('') }}/assets/images/pic3.JPG" alt=""><h5>Project Name</h5><p>Location | 550000 SF</p></div>
                 <div class="col-md-4 mt-2"></div>
                 <div class="col-md-4 mt-2"></div>
-                <div class="col-md-8 mt-2"><img src="{{ url('') }}/assets/images/pic3.jpg" alt=""><h5>Project Name</h5><p>Location | 550000 SF</p></div>
+                <div class="col-md-8 mt-2"><img src="{{ url('') }}/assets/images/pic3.JPG" alt=""><h5>Project Name</h5><p>Location | 550000 SF</p></div>
             </div>
             <br>
         </main>
