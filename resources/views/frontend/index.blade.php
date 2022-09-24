@@ -48,7 +48,7 @@
         <main class="hoc clear">
             <!-- main body -->
 
-            <div class="sectiontitle">
+            <div class="sectiontitle" style="max-width:50%;">
                 <img src="{{ url('') }}/assets/images/pic5.jpg" alt="">
             </div>
             <p class="btmspace-50 center">Enim neque nec placerat risus suscipit vitae volutpat nisi sit amet turpis

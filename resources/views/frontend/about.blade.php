@@ -19,7 +19,7 @@
 @endsection
 
 @section('content')
-    <div class="bgded overlay" style="background-image:url('{{ url('') }}/assets/images/KV.png');">
+    <div class="bgded" style="background-image:url('{{ url('') }}/assets/images/KV.png');">
         <div id="breadcrumb" class="hoc clear">
 
             {{-- <ul>
@@ -36,7 +36,7 @@
         <main class="hoc clear">
             <!-- main body -->
 
-            <div class="sectiontitle">
+            <div class="sectiontitle" style="max-width:50%;">
                 <img src="{{ url('') }}/assets/images/about2.png" alt="">
             </div>
             <p class="btmspace-50 center">ABOUT PECO
