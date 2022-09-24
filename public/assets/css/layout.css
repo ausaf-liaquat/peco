@@ -118,12 +118,12 @@ File: Layout CSS
 
 .sectiontitle {
     display: block;
-    max-width: 65%;
-    margin: 0 auto 60px;
-    text-align: center;
+    max-width: 75%;
+    margin: 0 auto 10px;
+    /* text-align: center; */
 }
-.sectiontitle * {
-    margin: 0;
+.sectiontitle {
+    margin-top: 60px;
 }
 
 .services li:nth-child(-n + 3) {
@@ -479,7 +479,7 @@ nav ol {
 
 /* Breadcrumb */
 #breadcrumb {
-    padding: 120px 0 15px;
+    padding: 360px 0 15px;
 }
 #breadcrumb ul {
     margin: 0;
