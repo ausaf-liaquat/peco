@@ -6,7 +6,7 @@
 @section('css')
     <style>
         .img_about {
-            width: 75%;
+          
             align-content: center;
             display: block;
             margin-left: auto;
@@ -36,8 +36,8 @@
         <main class="hoc clear">
             <!-- main body -->
 
-            <div class="sectiontitle" style="max-width:50%;">
-                <img src="{{ url('') }}/assets/images/about2.png" alt="">
+            <div class="sectiontitle">
+                <img class="img_about" src="{{ url('') }}/assets/images/about2.png" alt="">
             </div>
             <p class="btmspace-50 center">ABOUT PECO
 

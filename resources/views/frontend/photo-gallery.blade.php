@@ -12,6 +12,16 @@
             margin-left: auto;
             margin-right: auto;
         }
+
+        select {
+            width: 100%;
+            margin: 8px 0 27px;
+            box-sizing: border-box;
+            border: none;
+            border-bottom: 2px solid rgb(199 199 199);
+            border-radius: 0%;
+            padding: 0px 0px 8px;
+        }
     </style>
 @endsection
 @section('header')
@@ -19,67 +29,137 @@
 @endsection
 
 @section('content')
-    <div class="bgded overlay" style="background-image:url('{{ url('') }}/assets/images/KV.png');">
-        <div id="breadcrumb" class="hoc clear">
-
-            {{-- <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Lorem</a></li>
-                <li><a href="#">Ipsum</a></li>
-                <li><a href="#">Dolor</a></li>
-            </ul> --}}
-
-        </div>
-    </div>
     <div class="wrapper row3">
 
         <main class="hoc clear">
             <!-- main body -->
 
-            <div class="sectiontitle">
-                <img src="{{ url('') }}/assets/images/about2.png" alt="">
-            </div>
-            <p class="btmspace-50 center">ABOUT PECO
-
-
-                PECO is a growing company, based in Hong Kong. We specialize in tailoring a complete range of project
-                management, interior fit-out services for corporate offices only. Our director and staff have been involved
-                in the corporate office fit out sector for over 20 years and provide a wealth of experience in delivering
-                many quality office fit outs, and post fit out maintenance services.</p>
 
             <div class="text-center">
-                <img src="{{ url('') }}/assets/images/os.png" alt="" style="margin-bottom: 68px;">
+                <img class="mt-4" src="{{ url('') }}/assets/images/pg.png" alt="" style="margin-bottom: 68px;">
             </div>
             <!-- / main body -->
             <div class="clear"></div>
+            <!-- Gallery -->
+
 
             <div class="row">
-                <div class="col-md-6 mb-2">
-                    <img class="img_about" src="{{ url('') }}/assets/images/cd.png" alt="">
+                <div class="col-md-12">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <label for="sector">BY SECTOR</label>
+                            <div class="form-group">
+                                <select name="sector" id="sector" class="">
+                                    <option value="all">All</option>
+                                    <option value="retail">Retail</option>
+                                    <option value="corporate_office">Corporate Office</option>
+                                    <option value="residential">Residential</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-md-6">
-                    <img class="" src="{{ url('') }}/assets/images/off.png" alt="">
-                
+                <div class="col-lg-3 col-md-4 col-xs-6 thumb mb-4 retail">
+                    <a class="thumbnail" href="javascript:;" data-image-id="" data-toggle="modal"
+                        data-title="International Commerce Centre (ICC) | 74,000 sf"
+                        data-desc="International US Investment Bank" data-location="Hong Kong" data-year="2021"
+                        data-image="{{ url('') }}/assets/images/contact.png" data-target="#image-gallery">
+                        <img class="" src="{{ url('') }}/assets/images/contact.png" alt="Another alt text">
+                    </a>
                 </div>
-                <div class="col-md-6">
-                    <img src="{{ url('') }}/assets/images/off.png" alt="">
+                <div class="col-lg-3 col-md-4 col-xs-6 thumb mb-4 retail">
+                    <a class="thumbnail" href="javascript:;" data-image-id="" data-toggle="modal"
+                        data-title="International Commerce Centre (ICC) | 74,000 sf"
+                        data-desc="International US Investment Bank" data-location="Hong Kong" data-year="2021"
+                        data-image="{{ url('') }}/assets/images/contact.png" data-target="#image-gallery">
+                        <img class="" src="{{ url('') }}/assets/images/contact.png" alt="Another alt text">
+                    </a>
                 </div>
-                <div class="col-md-6 mb-2 mt-3">
-                    <img class="img_about" src="{{ url('') }}/assets/images/pm.png" alt="">
+
+                <div class="col-lg-3 col-md-4 col-xs-6 thumb mb-4 retail">
+                    <a class="thumbnail" href="javascript:;" data-image-id="" data-toggle="modal"
+                        data-title="International Commerce Centre (ICC) | 74,000 sf"
+                        data-desc="International US Investment Bank" data-location="Hong Kong" data-year="2021"
+                        data-image="{{ url('') }}/assets/images/contact.png" data-target="#image-gallery">
+                        <img class="" src="{{ url('') }}/assets/images/contact.png" alt="Another alt text">
+                    </a>
                 </div>
-                <div class="col-md-6 mb-2 mt-3">
-                    <img class="img_about" src="{{ url('') }}/assets/images/c.png" alt="">
+                <div class="col-lg-3 col-md-4 col-xs-6 thumb mb-4 retail">
+                    <a class="thumbnail" href="javascript:;" data-image-id="" data-toggle="modal"
+                        data-title="International Commerce Centre (ICC) | 74,000 sf"
+                        data-desc="International US Investment Bank" data-location="Hong Kong" data-year="2021"
+                        data-image="{{ url('') }}/assets/images/contact.png" data-target="#image-gallery">
+                        <img class="" src="{{ url('') }}/assets/images/contact.png" alt="Another alt text">
+                    </a>
                 </div>
-                <div class="col-md-6">
-                    <img src="{{ url('') }}/assets/images/off.png" alt="">
+                <div class="col-lg-3 col-md-4 col-xs-6 thumb mb-4 corporate_office">
+                    <a class="thumbnail" href="javascript:;" data-image-id="" data-toggle="modal"
+                        data-title="International Commerce Centre (ICC) | 74,000 sf"
+                        data-desc="International US Investment Bank" data-location="Hong Kong" data-year="2021"
+                        data-image="{{ url('') }}/assets/images/office.png" data-target="#image-gallery">
+                        <img class="" src="{{ url('') }}/assets/images/office.png" alt="Another alt text">
+                    </a>
                 </div>
-                <div class="col-md-6">
-                    <img src="{{ url('') }}/assets/images/off.png" alt="">
+
+
+
+                <div class="col-lg-3 col-md-4 col-xs-6 thumb mb-4 corporate_office">
+                    <a class="thumbnail" href="javascript:;" data-image-id="" data-toggle="modal"
+                        data-title="International Commerce Centre (ICC) | 74,000 sf"
+                        data-desc="International US Investment Bank" data-location="Hong Kong" data-year="2021"
+                        data-image="{{ url('') }}/assets/images/office.png" data-target="#image-gallery">
+                        <img class="" src="{{ url('') }}/assets/images/office.png" alt="Another alt text">
+                    </a>
                 </div>
-                <div class="col-md-6 mb-2 mt-3">
-                    <img class="img_about" src="{{ url('') }}/assets/images/pfm.png" alt="">
+                <div class="col-lg-3 col-md-4 col-xs-6 thumb mb-4 corporate_office">
+                    <a class="thumbnail" href="javascript:;" data-image-id="" data-toggle="modal"
+                        data-title="International Commerce Centre (ICC) | 74,000 sf"
+                        data-desc="International US Investment Bank" data-location="Hong Kong" data-year="2021"
+                        data-image="{{ url('') }}/assets/images/office.png" data-target="#image-gallery">
+                        <img class="" src="{{ url('') }}/assets/images/office.png" alt="Another alt text">
+                    </a>
+                </div>
+                <div class="col-lg-3 col-md-4 col-xs-6 thumb mb-4 corporate_office">
+                    <a class="thumbnail" href="javascript:;" data-image-id="" data-toggle="modal"
+                        data-title="International Commerce Centre (ICC) | 74,000 sf"
+                        data-desc="International US Investment Bank" data-location="Hong Kong" data-year="2021"
+                        data-image="{{ url('') }}/assets/images/office.png" data-target="#image-gallery">
+                        <img class="" src="{{ url('') }}/assets/images/office.png" alt="Another alt text">
+                    </a>
+                </div>
+
+
+
+                <div class="col-lg-3 col-md-4 col-xs-6 thumb mb-4 residential">
+                    <a class="thumbnail" href="javascript:;" data-image-id="" data-toggle="modal"
+                        data-title="International Commerce Centre (ICC) | 74,000 sf"
+                        data-desc="International US Investment Bank" data-location="Hong Kong" data-year="2022"
+                        data-image="{{ url('') }}/assets/images/off.png" data-target="#image-gallery">
+                        <img class="" src="{{ url('') }}/assets/images/off.png" alt="Another alt text">
+                    </a>
+                </div>
+                <div class="col-lg-3 col-md-4 col-xs-6 thumb mb-4 residential">
+                    <a class="thumbnail" href="javascript:;" data-image-id="" data-toggle="modal"
+                        data-title="International Commerce Centre (ICC) | 74,000 sf"
+                        data-desc="International US Investment Bank" data-location="Hong Kong" data-year="2022"
+                        data-image="{{ url('') }}/assets/images/off.png" data-target="#image-gallery">
+                        <img class="" src="{{ url('') }}/assets/images/off.png" alt="Another alt text">
+                    </a>
+                </div>
+                <div class="col-lg-3 col-md-4 col-xs-6 thumb mb-4 residential">
+                    <a class="thumbnail" href="javascript:;" data-image-id="" data-toggle="modal"
+                        data-title="International Commerce Centre (ICC) | 74,000 sf"
+                        data-desc="International US Investment Bank" data-location="Hong Kong" data-year="2022"
+                        data-image="{{ url('') }}/assets/images/off.png" data-target="#image-gallery">
+                        <img class="" src="{{ url('') }}/assets/images/off.png" alt="Another alt text">
+                    </a>
                 </div>
             </div>
+
+
+
+
+
             <br>
         </main>
     </div>
@@ -87,4 +167,33 @@
 
 @section('footer')
     @parent
+@endsection
+
+@section('js')
+    <script>
+        $("select").change(function() {
+            if ($(this).val() === 'all') {
+                $(".thumb").show();
+            } else {
+                $(".thumb").hide();
+                $("." + $(this).val()).show();
+            }
+
+        });
+    </script>
+
+    <script>
+        $('.thumbnail').on('click', function() {
+            console.log($(this).attr("data-image"))
+            if (typeof(Storage) !== "undefined") {
+                // Store
+                localStorage.setItem("image", $(this).attr("data-image"));
+                localStorage.setItem("title", $(this).attr("data-title"));
+                localStorage.setItem("desc", $(this).attr("data-desc"));
+                localStorage.setItem("location", $(this).attr("data-location"));
+                localStorage.setItem("year", $(this).attr("data-year"));
+            }
+            window.location.href = "{{ route('photo.inside') }}";
+        })
+    </script>
 @endsection

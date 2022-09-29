@@ -3,7 +3,19 @@
 @section('title')
     Index
 @endsection
+@section('css')
+    <style>
+        .img_home {
 
+            align-content: center;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+       
+    </style>
+@endsection
 @section('header')
     @parent
 @endsection
@@ -19,7 +31,7 @@
                             <p>Lacinia</p>
                             <h3 class="heading">Eleifend tristique lacus</h3>
                             <p>Eleifend sagittis cras convallis nisl eget</p>
-                            <footer><a class="btn" href="#">Nullam porttitor</a></footer>
+                        
                         </article>
                     </li>
                     <li>
@@ -48,8 +60,8 @@
         <main class="hoc clear">
             <!-- main body -->
 
-            <div class="sectiontitle" style="max-width:50%;">
-                <img src="{{ url('') }}/assets/images/pic5.jpg" alt="">
+            <div class="sectiontitle">
+                <img class="img_home" src="{{ url('') }}/assets/images/pic5.jpg" alt="">
             </div>
             <p class="btmspace-50 center">Enim neque nec placerat risus suscipit vitae volutpat nisi sit amet turpis
                 molestie ut sodales nisi efficitur duis id ex eros vivamus ac vehicula nibh non luctus ipsum suspendisse

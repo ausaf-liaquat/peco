@@ -1,7 +1,9 @@
 <?php
 
+use App\Http\Controllers\PictureController;
 use App\Mail\ContactMail;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Route;
 
@@ -30,6 +32,10 @@ Route::get('/contact', function () {
     return view('frontend.contact');
 })->name('contact');
 
+Route::get('/photo/inside', function () {
+    return view('frontend.photo-inside');
+})->name('photo.inside');
+
 Route::post('/contact/store', function (Request $request)
 {
     // dd($request->all());
@@ -45,13 +51,19 @@ Route::post('/contact/store', function (Request $request)
 })->name('contact.store');
 // Auth::routes();
 
-// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index']);
 
 // Route::middleware('auth')->group(function () {
-//     Route::view('about', 'about')->name('about');
+//     // Route::view('about', 'about')->name('about');
 
 //     Route::get('users', [\App\Http\Controllers\UserController::class, 'index'])->name('users.index');
 
 //     Route::get('profile', [\App\Http\Controllers\ProfileController::class, 'show'])->name('profile.show');
 //     Route::put('profile', [\App\Http\Controllers\ProfileController::class, 'update'])->name('profile.update');
+
+//     Route::get('pictures',[PictureController::class,'index'])->name('picture.index');
+//     Route::get('pictures/create',[PictureController::class,'create'])->name('picture.create');
+//     Route::post('pictures/store',[PictureController::class,'store'])->name('picture.store');
+//     Route::get('pictures/{picture}/edit',[PictureController::class,'edit'])->name('picture.edit');
+//     Route::get('pictures/{picture}/edit',[PictureController::class,'update'])->name('picture.update');
 // });
