@@ -16,12 +16,16 @@
         input[type=text] {
             width: 100%;
 
-            margin: 8px 0 27px;
+            margin: 8px 0 35px;
             box-sizing: border-box;
             border: none;
             border-bottom: 2px solid rgb(199 199 199);
             border-radius: 0%;
-            padding: 0px 0px 8px;
+            padding: 0px 0px 25px;
+        }
+        .form-control:focus{
+            /* border-color: #fff; */
+            box-shadow: none;
         }
     </style>
 @endsection
