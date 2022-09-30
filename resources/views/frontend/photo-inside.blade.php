@@ -157,13 +157,13 @@
                     <p class="text-center" id="year"></p>
                 </div>
                 <div class="col-lg-3 col-md-4 col-xs-6 thumb mb-4 retail">
-                    <a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-title=""
+                    <a class="thumbnail" href="javascript:;" data-image-id="" data-toggle="modal" data-title=""
                         data-image="{{ url('') }}/assets/images/office.png" data-target="#image-gallery">
                         <img class="img" src="{{ url('') }}/assets/images/office.png" alt="Another alt text">
                     </a>
                 </div>
                 <div class="col-lg-3 col-md-4 col-xs-6 thumb mb-4 retail">
-                    <a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-title=""
+                    <a class="thumbnail" href="javascript:;" data-image-id="" data-toggle="modal" data-title=""
                         data-image="https://images.pexels.com/photos/158971/pexels-photo-158971.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
                         data-target="#image-gallery">
                         <img class="img" src="{{ url('') }}/assets/images/office.png" alt="Another alt text">
@@ -171,21 +171,21 @@
                 </div>
 
                 <div class="col-lg-3 col-md-4 col-xs-6 thumb mb-4 retail">
-                    <a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-title=""
+                    <a class="thumbnail" href="javascript:;" data-image-id="" data-toggle="modal" data-title=""
                         data-image="https://images.pexels.com/photos/305070/pexels-photo-305070.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
                         data-target="#image-gallery">
                         <img class="img" src="{{ url('') }}/assets/images/office.png" alt="Another alt text">
                     </a>
                 </div>
                 <div class="col-lg-3 col-md-4 col-xs-6 thumb mb-4 retail">
-                    <a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-title="Test1"
+                    <a class="thumbnail" href="javascript:;" data-image-id="" data-toggle="modal" data-title="Test1"
                         data-image="https://images.pexels.com/photos/853168/pexels-photo-853168.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
                         data-target="#image-gallery">
                         <img class="img" src="{{ url('') }}/assets/images/office.png" alt="Another alt text">
                     </a>
                 </div>
                 <div class="col-lg-3 col-md-4 col-xs-6 thumb mb-4 corporate_office">
-                    <a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-title="Im so nice"
+                    <a class="thumbnail" href="javascript:;" data-image-id="" data-toggle="modal" data-title="Im so nice"
                         data-image="https://images.pexels.com/photos/158971/pexels-photo-158971.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
                         data-target="#image-gallery">
                         <img class="img" src="{{ url('') }}/assets/images/office.png" alt="Another alt text">
@@ -195,21 +195,21 @@
 
 
                 <div class="col-lg-3 col-md-4 col-xs-6 thumb mb-4 corporate_office">
-                    <a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-title="Im so nice"
+                    <a class="thumbnail" href="javascript:;" data-image-id="" data-toggle="modal" data-title="Im so nice"
                         data-image="https://images.pexels.com/photos/305070/pexels-photo-305070.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
                         data-target="#image-gallery">
                         <img class="img" src="{{ url('') }}/assets/images/office.png" alt="Another alt text">
                     </a>
                 </div>
                 <div class="col-lg-3 col-md-4 col-xs-6 thumb mb-4 corporate_office">
-                    <a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-title="Im so nice"
+                    <a class="thumbnail" href="javascript:;" data-image-id="" data-toggle="modal" data-title="Im so nice"
                         data-image="https://images.pexels.com/photos/853168/pexels-photo-853168.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
                         data-target="#image-gallery">
                         <img class="img" src="{{ url('') }}/assets/images/office.png" alt="Another alt text">
                     </a>
                 </div>
                 <div class="col-lg-3 col-md-4 col-xs-6 thumb mb-4 corporate_office">
-                    <a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-title="Im so nice"
+                    <a class="thumbnail" href="javascript:;" data-image-id="" data-toggle="modal" data-title="Im so nice"
                         data-image="https://images.pexels.com/photos/158971/pexels-photo-158971.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
                         data-target="#image-gallery">
                         <img class="img" src="{{ url('') }}/assets/images/office.png" alt="Another alt text">
@@ -219,21 +219,21 @@
 
 
                 <div class="col-lg-3 col-md-4 col-xs-6 thumb mb-4 residential">
-                    <a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-title="Im so nice"
+                    <a class="thumbnail" href="javascript:;" data-image-id="" data-toggle="modal" data-title="Im so nice"
                         data-image="https://images.pexels.com/photos/305070/pexels-photo-305070.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
                         data-target="#image-gallery">
                         <img class="img" src="{{ url('') }}/assets/images/off.png" alt="Another alt text">
                     </a>
                 </div>
                 <div class="col-lg-3 col-md-4 col-xs-6 thumb mb-4 residential">
-                    <a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-title="Im so nice"
+                    <a class="thumbnail" href="javascript:;" data-image-id="" data-toggle="modal" data-title="Im so nice"
                         data-image="https://images.pexels.com/photos/853168/pexels-photo-853168.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
                         data-target="#image-gallery">
                         <img class="img" src="{{ url('') }}/assets/images/off.png" alt="Another alt text">
                     </a>
                 </div>
                 <div class="col-lg-3 col-md-4 col-xs-6 thumb mb-4 residential">
-                    <a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-title="Im so nice"
+                    <a class="thumbnail" href="javascript:;" data-image-id="" data-toggle="modal" data-title="Im so nice"
                         data-image="https://images.pexels.com/photos/158971/pexels-photo-158971.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
                         data-target="#image-gallery">
                         <img class="img" src="{{ url('') }}/assets/images/off.png" alt="Another alt text">

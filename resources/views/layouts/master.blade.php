@@ -31,7 +31,7 @@
     @section('footer')
         @include('layouts.footer')
     @show
-    {{-- <a id="backtotop" href="#top"><i class="fa fa-chevron-up"></i></a> --}}
+    <a id="backtotop" href="#top"><i class="fa fa-chevron-up"></i></a>
     <!-- JAVASCRIPTS -->
     <script src="{{ url('') }}/assets/js/jquery.min.js"></script>
     <script src="{{ url('') }}/assets/js/jquery.backtotop.js"></script>
