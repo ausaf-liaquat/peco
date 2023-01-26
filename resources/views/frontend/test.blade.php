@@ -79,7 +79,7 @@
                         <div class="card-body card-custom rounded-4 rounded-top" style="height: 255px;">
                             <div class="text-center">
                                 <div class="owl-carousel owl-theme chart_apex owl-loaded owl-drag">
-                                   
+
                                 </div>
                             </div>
                         </div>
@@ -243,13 +243,17 @@
                                     },
                                     dataLabels: {
                                         name: {
+                                            
                                             show: false
                                         },
                                         value: {
+                                            color: '#019ee3',
                                             offsetY: -30,
-                                            fontSize: '39px'
-                                        },
-                                        colors: '#3e50a6'
+                                            fontSize: '39px',
+                                            
+                                        }
+                                        
+
 
                                     }
                                 }
