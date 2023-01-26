@@ -59,18 +59,21 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-4 col-xs-6 thumb mb-4 retail">
-                    <a class="thumbnail" href="javascript:;" data-image-id="" data-toggle="modal"
+                @foreach (\DB::table('projects')->get() as $item)
+                    <div class="col-lg-3 col-md-4 col-xs-6 thumb mb-4 {{\DB::table('categories')->where('id',$item->category_id)->first()->name}}">
+                    <a class="thumbnail" target="_blank" href="{{route('project.detail',['id'=>$item->id])}}" data-image-id="" data-toggle="modal"
                         data-class="retail"
                         data-title="International Commerce Centre (ICC) | 74,000 sf"
                         data-desc="International US Investment Bank" data-location="Hong Kong" data-year="2021"
-                        data-image="{{ url('') }}/assets/images/office.png" data-target="#image-gallery">
-                        <img class="" src="{{ url('') }}/assets/images/office.png" alt="Another alt text">
+                        data-image="{{ url('') }}/assets/images/{{$item->image}}" data-target="#image-gallery">
+                        <img class="" src="{{ url('') }}/assets/images/{{$item->image}}" alt="Another alt text">
                     </a>
-                    <strong>Project Name</strong>
-                    <p>Location | 550000 SF</p>
+                    <strong>{{ $item->title }}</strong>
+                    <p>{{ $item->location }} | {{ $item->description }}</p>
                 </div>
-                <div class="col-lg-3 col-md-4 col-xs-6 thumb mb-4 retail">
+                @endforeach
+                
+                {{-- <div class="col-lg-3 col-md-4 col-xs-6 thumb mb-4 retail">
                     <a class="thumbnail" href="javascript:;" data-image-id="" data-toggle="modal"
                         data-class="retail"
                         data-title="International Commerce Centre (ICC) | 74,000 sf"
@@ -197,7 +200,7 @@
                     </a>
                     <strong>Project Name</strong>
                     <p>Location | 550000 SF</p>
-                </div>
+                </div> --}}
             </div>
 
 
@@ -227,18 +230,18 @@
     </script>
 
     <script>
-        $('.thumbnail').on('click', function() {
-            console.log($(this).attr("data-image"))
-            if (typeof(Storage) !== "undefined") {
-                // Store
-                localStorage.setItem("image", $(this).attr("data-image"));
-                localStorage.setItem("title", $(this).attr("data-title"));
-                localStorage.setItem("desc", $(this).attr("data-desc"));
-                localStorage.setItem("location", $(this).attr("data-location"));
-                localStorage.setItem("year", $(this).attr("data-year"));
-                localStorage.setItem("class", $(this).attr("data-class"));
-            }
-            window.location.href = "{{ route('photo.inside') }}";
-        })
+        // $('.thumbnail').on('click', function() {
+        //     console.log($(this).attr("data-image"))
+        //     if (typeof(Storage) !== "undefined") {
+        //         // Store
+        //         localStorage.setItem("image", $(this).attr("data-image"));
+        //         localStorage.setItem("title", $(this).attr("data-title"));
+        //         localStorage.setItem("desc", $(this).attr("data-desc"));
+        //         localStorage.setItem("location", $(this).attr("data-location"));
+        //         localStorage.setItem("year", $(this).attr("data-year"));
+        //         localStorage.setItem("class", $(this).attr("data-class"));
+        //     }
+        //     window.location.href = "{{ route('photo.inside') }}";
+        // })
     </script>
 @endsection

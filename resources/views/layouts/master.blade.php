@@ -33,8 +33,7 @@
     @show
     <a id="backtotop" href="#top"><i class="fa fa-chevron-up"></i></a>
     <!-- JAVASCRIPTS -->
-    <script src="{{ url('') }}/assets/js/jquery.min.js"></script>
-    <script src="{{ url('') }}/assets/js/jquery.backtotop.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>    <script src="{{ url('') }}/assets/js/jquery.backtotop.js"></script>
     <script src="{{ url('') }}/assets/js/jquery.mobilemenu.js"></script>
     <script src="{{ url('') }}/assets/js/jquery.flexslider-min.js"></script>
     <!-- JavaScript Bundle with Popper -->

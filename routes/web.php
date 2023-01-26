@@ -4,6 +4,7 @@ use App\Http\Controllers\PictureController;
 use App\Mail\ContactMail;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Route;
 
@@ -19,12 +20,46 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('frontend.index');
+    $start = 0;
+    $end = 100;
+    $interval = 10;
+
+    $range = range(0, 150000, 150000 / 5);
+    $range1 = range(0, 150000, 150000 / 2);
+    $object_array = [];
+    foreach ($range1 as $key => $value) {
+
+        $object_array[] = ['strokeStyle' => '', 'min' => $value, 'max' => next($range1)];
+    }
+  
+    $filtered_array = array_filter($object_array, function ($inner_array) {
+        return $inner_array['max'] !== false;
+    });
+    $i = 0;
+    foreach ($filtered_array as &$inner_array) {
+        if ($i == 0) {
+            $inner_array['strokeStyle'] = "#3e50a6";
+        } else {
+            $inner_array['strokeStyle'] = "#f27815";
+        }
+        $i++;
+    }
+    // dd(json_encode($filtered_array));
+    // dd($range,150000/5);
+    $data = [
+        'range' => $range,
+        'strockstyle' => $filtered_array
+    ];
+    return view('frontend.test', $data);
 })->name('home');
+Route::get('data', function () {
+    return $data = [55, 66, 76, 87];
+})->name('getdata');
+
 Route::get('/about', function () {
     return view('frontend.about');
 })->name('about');
-Route::get('/photo-gallery', function () {
+Route::get('/project/gallery', function () {
     return view('frontend.photo-gallery');
 })->name('gallery');
 
@@ -36,34 +71,22 @@ Route::get('/photo/inside', function () {
     return view('frontend.photo-inside');
 })->name('photo.inside');
 
-Route::post('/contact/store', function (Request $request)
-{
+Route::get('/project/{id}/detail', function ($id) {
+    $data = [
+        'project' => DB::table('projects')->where('id', $id)->first()
+    ];
+    return view('frontend.project_detail', $data);
+})->name('project.detail');
+
+Route::post('/contact/store', function (Request $request) {
     // dd($request->all());
 
     $request->validate(([
-        'name'=>'required',
-        'email'=>'required|email',
-        'message'=>'required'
+        'name' => 'required',
+        'email' => 'required|email',
+        'message' => 'required'
     ]));
-    Mail::to($request->email)->send(new ContactMail($request->name,$request->email,$request->message));
+    Mail::to($request->email)->send(new ContactMail($request->name, $request->email, $request->message));
 
-    return redirect()->back()->with('status','Email sent successfully');
+    return redirect()->back()->with('status', 'Email sent successfully');
 })->name('contact.store');
-// Auth::routes();
-
-// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index']);
-
-// Route::middleware('auth')->group(function () {
-//     // Route::view('about', 'about')->name('about');
-
-//     Route::get('users', [\App\Http\Controllers\UserController::class, 'index'])->name('users.index');
-
-//     Route::get('profile', [\App\Http\Controllers\ProfileController::class, 'show'])->name('profile.show');
-//     Route::put('profile', [\App\Http\Controllers\ProfileController::class, 'update'])->name('profile.update');
-
-//     Route::get('pictures',[PictureController::class,'index'])->name('picture.index');
-//     Route::get('pictures/create',[PictureController::class,'create'])->name('picture.create');
-//     Route::post('pictures/store',[PictureController::class,'store'])->name('picture.store');
-//     Route::get('pictures/{picture}/edit',[PictureController::class,'edit'])->name('picture.edit');
-//     Route::get('pictures/{picture}/edit',[PictureController::class,'update'])->name('picture.update');
-// });
