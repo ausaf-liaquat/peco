@@ -51,6 +51,8 @@
         <canvas id="demo"></canvas>
         <div class="row">
             <div class="col-md-4">
+                <a class="weatherwidget-io weather_data" data-label_1="NEW YORK" data-label_2="WEATHER"
+                    data-theme="original">NEW YORK WEATHER</a>
 
             </div>
             <div class="col-md-8">
@@ -243,16 +245,16 @@
                                     },
                                     dataLabels: {
                                         name: {
-                                            
+
                                             show: false
                                         },
                                         value: {
                                             color: '#019ee3',
                                             offsetY: -30,
                                             fontSize: '39px',
-                                            
+
                                         }
-                                        
+
 
 
                                     }
@@ -306,5 +308,50 @@
             })
 
         }
+    </script>
+    <script>
+        const instance = axios.create({
+            proxy: true
+        });
+
+        ! function(d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (!d.getElementById(id)) {
+                js = d.createElement(s);
+                js.id = id;
+                js.src = 'https://weatherwidget.io/js/widget.min.js';
+                fjs.parentNode.insertBefore(js, fjs);
+            }
+        }(document, 'script', 'weatherwidget-io-js');
+
+        axios.get('https://forecast7.com/api/autocomplete/karachi', {
+            mode: 'no-cors',
+            headers: {
+                'Access-Control-Allow-Origin': '*',
+                'Content-Type': 'application/json',
+            },
+            withCredentials: true,
+            credentials: 'same-origin',
+        }).then(function(res) {
+            var place_id = res.data[0].place_id
+
+            axios.get(`https://forecast7.com/api/getUrl/${place_id}`, {
+                mode: 'no-cors',
+                headers: {
+                    'Access-Control-Allow-Origin': '*',
+                    'Content-Type': 'application/json',
+                },
+                withCredentials: true,
+                credentials: 'same-origin',
+            }).then(function(res) {
+                $('.weather_data').attr('href', `https://forecast7.com/en/${res.data}/`)
+                console.log(res.data);
+
+
+
+
+            })
+
+        })
     </script>
 @endsection
