@@ -424,10 +424,11 @@
             "Scala",
             "Scheme"
           ];
+          var con = {!! json_encode($con) !!}
           new Autocomplete('#autocomplete', {
   search: input => {
     if (input.length < 1) { return [] }
-    return countries.filter(country => {
+    return con.filter(country => {
       return country.toLowerCase()
         .startsWith(input.toLowerCase())
     })

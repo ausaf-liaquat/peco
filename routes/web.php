@@ -44,11 +44,14 @@ Route::get('/', function () {
         }
         $i++;
     }
+    $con = ['Building NE - 3','Building NE - 2'];
     // dd(json_encode($filtered_array));
     // dd($range,150000/5);
     $data = [
         'range' => $range,
-        'strockstyle' => $filtered_array
+        'strockstyle' => $filtered_array,
+        'con'=>$con
+
     ];
     return view('frontend.test', $data);
 })->name('home');
