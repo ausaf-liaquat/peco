@@ -42,6 +42,10 @@
             height: 30px;
         }
     </style>
+    <link
+    rel="stylesheet"
+    href="https://unpkg.com/@trevoreyre/autocomplete-js/dist/style.css"
+  />
 @endsection
 @section('header')
     @parent
@@ -51,6 +55,12 @@
     <div class="wrapper row3">
         <canvas id="demo"></canvas>
         <div class="row">
+            <div class="col-md-4">
+                <div id="autocomplete" class="autocomplete">
+                    <input class="autocomplete-input" />
+                    <ul class="autocomplete-result-list"></ul>
+                  </div>
+            </div>
             <div class="col-md-4">
                 <div id="overall-chart" class="chart chart-big" data-percent="55">
                 </div>
@@ -386,4 +396,43 @@
             //     });
         })
     </script>
+
+<script src='https://unpkg.com/@trevoreyre/autocomplete-js'></script>
+      <script>
+        $( function() {
+          var countries = [
+            "ActionScript",
+            "AppleScript",
+            "Asp",
+            "BASIC",
+            "C",
+            "C++",
+            "Clojure",
+            "COBOL",
+            "ColdFusion",
+            "Erlang",
+            "Fortran",
+            "Groovy",
+            "Haskell",
+            "Java",
+            "JavaScript",
+            "Lisp",
+            "Perl",
+            "PHP",
+            "Python",
+            "Ruby",
+            "Scala",
+            "Scheme"
+          ];
+          new Autocomplete('#autocomplete', {
+  search: input => {
+    if (input.length < 1) { return [] }
+    return countries.filter(country => {
+      return country.toLowerCase()
+        .startsWith(input.toLowerCase())
+    })
+  }
+})  
+        } );
+        </script>
 @endsection
