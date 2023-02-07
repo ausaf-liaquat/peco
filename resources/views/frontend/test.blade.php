@@ -4,6 +4,7 @@
     About
 @endsection
 @section('css')
+
     <link href="{{ url('') }}/assets/jquery-gauge.css" type="text/css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
         integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g=="
@@ -51,9 +52,9 @@
         <canvas id="demo"></canvas>
         <div class="row">
             <div class="col-md-4">
-                <a class="weatherwidget-io weather_data" data-label_1="NEW YORK" data-label_2="WEATHER"
-                    data-theme="original">NEW YORK WEATHER</a>
-
+                <div id="overall-chart" class="chart chart-big" data-percent="55">
+                </div>
+                <br> <strong id="overall_text" style="color: #01a1e7;"> 0 out of 0</strong>
             </div>
             <div class="col-md-8">
                 <div class="mt-4">
@@ -148,15 +149,23 @@
 @endsection
 
 @section('js')
+
+
+    <!-- Vendor js -->
+    <script src="http://pulsense.us/assets/js/vendor.min.js"></script>
+    
+    <!-- App js-->
+    <script src="http://pulsense.us/assets/js/app.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.2.5/axios.min.js"
         integrity="sha512-JEXkqJItqNp0+qvX53ETuwTLoz/r1Tn5yTRnZWWz0ghMKM2WFCEYLdQnsdcYnryMNANMAnxNcBa/dN7wQtESdw=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    {{-- <script src="https://code.jquery.com/jquery-migrate-3.3.0.min.js"></script> --}}
-    <script type="text/javascript" src="{{ url('') }}/assets/gauge.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"
         integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script type="text/javascript" src="{{ url('') }}/assets/gauge.js"></script>
+    <script src="http://pulsense.us/assets/libs/apexcharts/apexcharts.min.js"></script>
+    {{-- <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script> --}}
+    
     <script>
         //  selectGauge3 = new Gauge(document.getElementById("select-3"));
         var bigFont = "14px sans-serif";
@@ -309,49 +318,72 @@
 
         }
     </script>
+    <script type="text/javascript" src="{{ url('') }}/assets/ep.js"></script>
+    {{-- Latest Easy Pie Chart For Gradient  --}}
+    {{-- <script src='https://cdnjs.cloudflare.com/ajax/libs/easy-pie-chart/2.1.6/jquery.easypiechart.min.js'></script> --}}
+    {{-- <script src="http://pulsense.us/assets/js/jquery.easy-pie-chart.js"></script> --}}
     <script>
-        const instance = axios.create({
-            proxy: true
+        $(document).ready(function() {
+            // var element = document.querySelector('#overall-chart');
+            // new EasyPieChart(element, {
+            //     barColor: function(percent) {
+            //         var ctx = this.renderer.ctx();
+            //         var canvas = this.renderer.canvas();
+            //         var gradient = ctx.createLinearGradient(0, 0, canvas.width, 0);
+            //         gradient.addColorStop(0, "#ffe57e");
+            //         gradient.addColorStop(1, "#de5900");
+            //         return gradient;
+            //     },
+            //     trackColor: '#606060',
+            //     scaleColor: false,
+            //     lineWidth: 10,
+            //     //   lineCap: 'butt',
+            //     size: 190,
+            //     //   rotate: 180
+            // });
+
+            $('#overall-chart').easyPieChart({
+                size: 300,
+                    scaleColor: "transparent",
+
+                    // trackColor: '#D6DBDF',
+                    scaleLength: 2,
+                    // lineCap: 'butt', //Can be butt
+                    size: 160,
+                    lineWidth: 10,
+                    animate: 1000,
+            barColor: function() {
+                var ctx = this.renderer.getCtx();
+                var canvas = this.renderer.getCanvas();
+                var gradient = ctx.createLinearGradient(0,0,canvas.width,0);
+                gradient.addColorStop(0, "#24cdea");
+                gradient.addColorStop(1, "#274dd5");
+                // gradient.addColorStop(0, "#59fdbe");
+                // gradient.addColorStop(1, "#84ff3c");
+                return gradient;
+            }
         });
 
-        ! function(d, s, id) {
-            var js, fjs = d.getElementsByTagName(s)[0];
-            if (!d.getElementById(id)) {
-                js = d.createElement(s);
-                js.id = id;
-                js.src = 'https://weatherwidget.io/js/widget.min.js';
-                fjs.parentNode.insertBefore(js, fjs);
-            }
-        }(document, 'script', 'weatherwidget-io-js');
 
-        axios.get('https://forecast7.com/api/autocomplete/karachi', {
-            mode: 'no-cors',
-            headers: {
-                'Access-Control-Allow-Origin': '*',
-                'Content-Type': 'application/json',
-            },
-            withCredentials: true,
-            credentials: 'same-origin',
-        }).then(function(res) {
-            var place_id = res.data[0].place_id
+            // $('#overall-chart').easyPieChart({
+            //         size: 300,
+            //         scaleColor: "transparent",
 
-            axios.get(`https://forecast7.com/api/getUrl/${place_id}`, {
-                mode: 'no-cors',
-                headers: {
-                    'Access-Control-Allow-Origin': '*',
-                    'Content-Type': 'application/json',
-                },
-                withCredentials: true,
-                credentials: 'same-origin',
-            }).then(function(res) {
-                $('.weather_data').attr('href', `https://forecast7.com/en/${res.data}/`)
-                console.log(res.data);
-
-
-
-
-            })
-
+            //         trackColor: '#D6DBDF',
+            //         scaleLength: 2,
+            //         // lineCap: 'butt', //Can be butt
+            //         size: 160,
+            //         lineWidth: 10,
+            //         animate: 1000,
+            //         barColor: function() {
+            //         var ctx = this.renderer.getCtx();
+            //         var canvas = this.renderer.getCanvas();
+            //         var gradient = ctx.createLinearGradient(0,0,canvas.width,0);
+            //         gradient.addColorStop(0, "#ffe57e");
+            //         gradient.addColorStop(1, "#de5900");
+            //         return gradient;
+            //     }
+            //     });
         })
     </script>
 @endsection
