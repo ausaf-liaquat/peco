@@ -56,7 +56,7 @@ Route::get('/', function () {
     return view('frontend.test', $data);
 })->name('home');
 Route::get('data', function () {
-    return $data = [55, 66, 76, 87];
+    return $data = ['55', '66', '76', '87'];
 })->name('getdata');
 
 Route::get('/about', function () {
