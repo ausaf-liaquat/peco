@@ -19,7 +19,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
+Route::get('/', function (Request $request) {
     $start = 0;
     $end = 100;
     $interval = 10;
@@ -50,7 +50,8 @@ Route::get('/', function () {
     $data = [
         'range' => $range,
         'strockstyle' => $filtered_array,
-        'con'=>$con
+        'con'=>$con,
+        'invited'=>$request->invite
 
     ];
     return view('frontend.test', $data);
